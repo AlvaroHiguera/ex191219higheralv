@@ -1,0 +1,62 @@
+.inicio {
+  font-size: 2rem;
+  text-align: center;
+}
+
+body {
+  counter-reset: higheralv_suscripcion;
+}
+body h1 {
+  counter-increment: higheralv_suscripcion;
+  counter-reset: higheralv_serie;
+}
+body h1::before {
+  content: "Suscripcion " counter(higheralv_suscripcion) " ";
+}
+body h2 {
+  counter-increment: higheralv_serie;
+  counter-reset: higheralv_personajes;
+}
+body h2::before {
+  content: counter(higheralv_suscripcion) "." counter(higheralv_serie) " ";
+}
+body h3 {
+  counter-increment: higheralv_personajes;
+}
+body h3::before {
+  color: skyblue;
+  content: counter(higheralv_suscripcion) "." counter(higheralv_serie) "." counter(higheralv_personajes) " ";
+}
+
+.contenedor_4_higheralv {
+  width: 100%;
+  padding: 1%;
+  background-color: skyblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 200px;
+}
+.contenedor_4_higheralv .mitad_higheralv {
+  width: 45.5%;
+  padding: 1%;
+  background-color: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.contenedor_4_higheralv .mitad_higheralv .tercios_higheralv {
+  width: 30.3333333333%;
+  padding: 1%;
+  background-color: lightgray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px dotted red;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+/*# sourceMappingURL=higheralvhojaestilos_ej1higheralv.css.map */

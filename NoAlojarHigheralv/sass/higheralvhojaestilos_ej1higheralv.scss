@@ -1,0 +1,121 @@
+.inicio {
+  font-size: 2rem;
+  text-align: center;
+}
+
+body {
+  counter-reset: higheralv_suscripcion;
+  h1 {
+    counter-increment: higheralv_suscripcion;
+    counter-reset: higheralv_serie;
+  }
+  h1::before {
+    content: "Suscripcion " counter(higheralv_suscripcion) " ";
+  }
+  h2 {
+    counter-increment: higheralv_serie;
+    counter-reset: higheralv_personajes;
+  }
+  h2::before {
+    content: counter(higheralv_suscripcion) "." counter(higheralv_serie) " ";
+  }
+  h3 {
+    counter-increment: higheralv_personajes;
+  }
+  h3::before {
+    color: skyblue;
+    content: counter(higheralv_suscripcion) "." counter(higheralv_serie) "." counter(higheralv_personajes) " ";
+  }
+}
+
+
+//
+// @mixin optimizar_higheralv($width, $padding, $background_color) {
+//     width: $width;
+//     padding: $padding;
+//     background-color: $background_color;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//   }
+//   @mixin bordes_higheralv($ancho, $tipo, $color) {
+//     border: $ancho $tipo $color;
+//   }
+  
+//   .contenedor_4_higheralv {
+//     @include optimizar_higheralv(100%, 1%, skyblue);
+  
+//     min-height: 200px;
+//     .mitad_higheralv {
+//       @include optimizar_higheralv(1/2+90%, 1%, lightgray);
+//       @include bordes_higheralv(1px, solid, black);
+//       .tercios_higheralv {
+//         @include optimizar_higheralv(1/3+90%, 1%, lightgray);
+//         @include bordes_higheralv(1px, dotted, red);
+//         align-items: center;
+//       }
+//     }
+//   }
+
+
+//   .contenedor_4_higheralv {
+//     width: 100%;
+//     padding: 1%;
+//     background-color: skyblue;
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+
+//   min-height: 200px;
+//   .mitad_higheralv {
+//       width: 1px/2px * 90%;
+//       padding: 1%;
+//       background-color: lightgray;
+//       display: flex;
+//       flex-wrap: wrap;
+//       justify-content: center;
+      
+//       border: 1px solid black;
+//     .tercios_higheralv {
+//         width: 1px/3px * 90%;
+//         padding: 1%;
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: center;
+        
+//         border: 1px dotted red;
+        
+//         align-items: center;
+//     }
+//   }
+// }
+ 
+
+
+@mixin optimizar_higheralv($width, $padding, $background_color) {
+  width: $width;
+  padding: $padding;
+  background-color: $background_color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@mixin bordes_higheralv($ancho, $tipo, $color) {
+  border: $ancho $tipo $color;
+  box-sizing: border-box;
+}
+
+.contenedor_4_higheralv {
+    @include optimizar_higheralv(100%, 1%, skyblue);
+  
+    min-height: 200px;
+    .mitad_higheralv {
+      @include optimizar_higheralv(1/2+45%, 1%, lightgray);
+      @include bordes_higheralv(1px, solid, black);
+      .tercios_higheralv {
+        @include optimizar_higheralv(1/3+30%, 1%, lightgray);
+        @include bordes_higheralv(1px, dotted, red);
+        align-items: center;
+      }
+    }
+  }
