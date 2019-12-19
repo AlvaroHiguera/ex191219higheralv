@@ -1,0 +1,61 @@
+.inicio {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.contenedor_3_higheralv {
+  overflow: hidden;
+  background-color: teal;
+}
+
+.contenedor_3_higheralv .hijo1_higheralv {
+  float: left;
+  width: 50%;
+  display: block;
+  padding: 3%;
+  border: 1px solid yellow;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.contenedor_3_higheralv .hijo2_higheralv {
+  float: right;
+  width: 48%;
+  display: block;
+  padding: 3%;
+  border: 1px solid yellow;
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+  .contenedor_3_higheralv .hijo1_higheralv,
+.hijo2_higheralv {
+    float: none;
+    width: 100%;
+    border: 1px solid yellow;
+    box-sizing: border-box;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+}
+.menu_higheralv {
+  min-height: 25px;
+  overflow: hidden;
+  background-color: gold;
+}
+
+.menu_higheralv a {
+  float: right;
+  display: block;
+  padding: 5px;
+}
+
+@media screen and (max-width: 400px) {
+  .menu_higheralv a {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=higheralvhojaestilos_ej2higheralv.css.map */
