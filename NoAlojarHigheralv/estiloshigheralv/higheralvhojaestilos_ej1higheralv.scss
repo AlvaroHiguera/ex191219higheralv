@@ -2,6 +2,24 @@
   font-size: 2rem;
   text-align: center;
 }
+.menu_higheralv {
+  min-height: 25px;
+  overflow: hidden;
+  background-color: gold;
+}
+.menu_higheralv a {
+  float: right;
+  display: block;
+  padding: 5px;
+}
+@media screen and (max-width: 400px) {
+  .menu_higheralv a {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+}
+
 
 body {
   counter-reset: higheralv_suscripcion;
